@@ -6,7 +6,9 @@
 
 @_spi(AdyenInternal) @testable import Adyen
 @_spi(AdyenInternal) @testable import AdyenActions
+#if canImport(AdyenWeChatPay)
 import AdyenWeChatPay
+#endif
 import SafariServices
 import XCTest
 
@@ -102,6 +104,7 @@ class AdyenActionComponentTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
 
+#if canImport(AdyenWeChatPay)
     func testWeChatAction() {
         let sut = AdyenActionComponent(context: Dummy.context)
 
@@ -118,6 +121,7 @@ class AdyenActionComponentTests: XCTestCase {
 
         waitForExpectations(timeout: 15, handler: nil)
     }
+    #endif
 
     func test3DSAction() {
         let sut = AdyenActionComponent(context: Dummy.context)
