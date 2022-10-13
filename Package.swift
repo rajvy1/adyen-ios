@@ -7,7 +7,8 @@ let package = Package(
     name: "Adyen",
     defaultLocalization: "en-us",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v11),
+        .macOS(.v10_15)
     ],
     products: [
         .library(
