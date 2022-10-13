@@ -56,7 +56,7 @@ let package = Package(
         .package(
             name: "AdyenNetworking",
             url: "https://github.com/Adyen/adyen-networking-ios",
-            .exact(Version(1, 0, 0))
+            .branch("mac-catalyst")
         ),
         .package(
             name: "AdyenWeChatPayInternal",
