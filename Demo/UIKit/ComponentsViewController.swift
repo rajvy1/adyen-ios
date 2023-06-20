@@ -32,6 +32,7 @@ internal final class ComponentsViewController: UIViewController, Presenter {
                 ComponentsItem(title: "Drop In", selectionHandler: presentDropInComponent)
             ],
             [
+                ComponentsItem(title: "ThreeDS2 Standalone", selectionHandler: presentThreeDS2Component),
                 ComponentsItem(title: "Card", selectionHandler: presentCardComponent),
                 ComponentsItem(title: "iDEAL", selectionHandler: presentIdealComponent),
                 ComponentsItem(title: "Online Banking PL", selectionHandler: presentOnlineBankingPolandComponent),
@@ -50,6 +51,12 @@ internal final class ComponentsViewController: UIViewController, Presenter {
         if #available(iOS 13.0.0, *) {
             addConfigurationButton()
         }
+    }
+    
+    // MARK: Standalone component
+    
+    internal func presentThreeDS2Component() {
+        integrationExample.presentThree3DS2Component()
     }
     
     // MARK: - DropIn Component

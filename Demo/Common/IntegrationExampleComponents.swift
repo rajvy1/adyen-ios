@@ -15,6 +15,18 @@ extension IntegrationExample {
 
     // MARK: - Standalone Components
 
+    internal func presentThree3DS2Component() {
+        do {
+            let context = try  APIContext(environment: ConfigurationConstants.demoServerEnvironment, clientKey: ConfigurationConstants.clientKey)
+            let threeDS2Component = ThreeDS2Component(context: AdyenContext(apiContext: context, payment: nil))
+            threeDS2Component.delegate = self
+            
+            threeDS2Component.handle(ThreeDS2FingerprintAction(fingerprintToken: mock3DS2FingerprintToken, paymentData: nil))
+        } catch {
+            print("debug:: \(error.localizedDescription)")
+        }
+    }
+    
     // MARK: Card
 
     internal func presentCardComponent() {
